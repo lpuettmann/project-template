@@ -1,0 +1,44 @@
+---
+title: "Title"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Import packages I typically need:
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(readxl)
+library(janitor)
+library(scales)
+```
+
+Set theme and change some defaults on warnings:
+
+```{r}
+theme_set(theme_minimal())
+options(dplyr.summarise.inform = FALSE) # disable dplyr 1.0 warnings
+```
+
+```{r}
+mtcars %>% 
+  group_by(cyl) %>% 
+  summarise(ave = mean(cyl))
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_jitter(alpha = 0.7, stroke = 0, size = 3) +
+  labs(x = "Fuel efficiency, miles/gallon", y = "Engine size, litres",
+       color = "Car class: ", title  = "Car comparison",
+       subtitle = "For 38 models, 1999-2008.",
+       caption = "Source: US Environmental Protection Agency")
+```
+
+
+
+
+
