@@ -1,6 +1,6 @@
 ---
-title: "Title"
-author: "Author"
+title: "Example RMarkdown script"
+author: "Lukas"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -20,6 +20,8 @@ Set theme and change some defaults on warnings:
 
 ```{r}
 theme_set(theme_minimal())
+theme_update(axis.text.x=element_text(colour="black"),
+             axis.text.y=element_text(colour="black"))
 options(dplyr.summarise.inform = FALSE) # disable dplyr 1.0 warnings
 ```
 
