@@ -21,7 +21,8 @@ Set theme and change some defaults on warnings:
 ```{r}
 theme_set(theme_minimal())
 theme_update(axis.text.x=element_text(colour="black"),
-             axis.text.y=element_text(colour="black"))
+             axis.text.y=element_text(colour="black"),
+             legend.position = "top")
 options(dplyr.summarise.inform = FALSE) # disable dplyr 1.0 warnings
 ```
 
